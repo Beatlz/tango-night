@@ -1,6 +1,6 @@
 // Local json
-import Credentials = require("@constants/credentials.json")
-import Constants = require("@constants/config.json")
+import * as Credentials from "@constants/credentials.json"
+import * as Constants from "@constants/config.json"
 // Local TS Files
 import Tango from "@modules/Tango"
 import { Client } from "discord.js"

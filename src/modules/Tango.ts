@@ -1,7 +1,7 @@
 // Local json
-import Heroes = require("@constants/heroes.json")
-import HeroNames = require("@constants/heroNames.json")
-import Config = require("@constants/config.json")
+import * as Heroes from "@constants/heroes.json"
+import * as HeroNames from "@constants/heroNames.json"
+import * as Config from "@constants/config.json"
 // Local TS Files
 import IsHero from "@interfaces/IsHero"
 import emptyHero from "@templates/HeroTemplate"
