@@ -1,7 +1,7 @@
-// Local json
-import * as Heroes from "@constants/heroes.json"
-import * as HeroNames from "@constants/heroNames.json"
-import * as Config from "@constants/config.json"
+// Local assets
+import Heroes from "@constants/heroes"
+import HeroNames from "@constants/heroNames"
+import Config from "@constants/config"
 // Local TS Files
 import IsHero from "@interfaces/IsHero"
 import emptyHero from "@templates/HeroTemplate"

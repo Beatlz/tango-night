@@ -1,4 +1,4 @@
-[
+const heroNames = [
 	"Anti-Mage",
 	"Axe",
 	"Bane",
@@ -119,5 +119,7 @@
 	"Void Spirit",
 	"Snapfire",
 	"Mars",
-	"Dawnbreaker"
+	"Dawnbreaker",
 ]
+
+export default heroNames

@@ -1,6 +1,6 @@
 // Local json
-import * as Credentials from "@constants/credentials.json"
-import * as Constants from "@constants/config.json"
+import Credentials from "@constants/credentials"
+import Constants from "@constants/config"
 // Local TS Files
 import Tango from "@modules/Tango"
 import { Client } from "discord.js"
