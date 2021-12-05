@@ -29,6 +29,7 @@
   },
   "_moduleAliases": {
     "@": "/dist",
+    "@commands": "./dist/commands",
     "@constants": "./dist/constants",
     "@interfaces": "./dist/interfaces",
     "@modules": "./dist/modules",

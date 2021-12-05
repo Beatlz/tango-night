@@ -3,7 +3,7 @@ require("module-alias/register")
 import Heroes from "@constants/heroes"
 import HeroNames from "@constants/heroNames"
 import Config from "@constants/config"
-// Local TS Files
+// Local templates and interfaces
 import IsHero from "@interfaces/IsHero"
 import emptyHero from "@templates/HeroTemplate"
 // Node modules
@@ -11,14 +11,16 @@ import Fuse from "fuse.js"
 import { Message, User } from "discord.js"
 
 class Tango {
+		command: string
+		mention: User | false
 		msg: Message
 		msgParams: string[]
 		msgParamsString: string
-		mention: User | false
 
 		constructor(message: Message) {
 			this.msg = message
-			this.mention = this.hasMention() 
+			this.command = message.content.split(".")[1]
+			this.mention = this.hasMention()
 			this.msgParams = message.content.split(" ").slice(1)
 			this.msgParamsString = this.msgParams.join(" ")
 		}
@@ -63,7 +65,20 @@ class Tango {
 		}
 
 		hasParams(): number {
+			if (!this.msgParams)
+				return 0
+			
 			return this.msgParams.length
+		}
+
+		queryParams(): string {
+			const params = this.msgParams.filter((param: string) => param.includes("="))
+
+			return `?${params.join("&")}`
+		}
+
+		apiUrl(url: string): string {
+			return `${Config.apiServer}/${url}/${this.queryParams()}`
 		}
 }
 

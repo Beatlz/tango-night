@@ -17,17 +17,12 @@ client.on("ready", () => {
 client.on("message", msg => {
 	const { content, author } = msg
 
-	if (!content.startsWith(prefix) || author.bot || content.split(prefix).length <= 1) return
+	if (!content.startsWith(prefix) || author.bot || content.split(prefix).length <= 1)
+		return
 
 	const tango = new Tango(msg)
+	const command = tango.command
 
-	console.log(tango.msgParamsString)
-	
-	if (tango.hasHero().id) {
-		msg.channel.send(tango.hasHero().localized_name)
-	} else {
-		msg.channel.send(`No hero was found ${content}`)
-	}
 })
 	
 client.login(Credentials.token)
