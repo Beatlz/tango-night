@@ -1,4 +1,4 @@
 {
     "prefix": "tango.",
-    "threshold": 0.5
+    "heroFuzzyThreshold": 0.5
 }

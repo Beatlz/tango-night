@@ -1,12 +1,13 @@
-import Credentials = require("./constants/credentials.json")
-import Constants = require("./constants/config.json")
-
-import Tango from "./modules/Tango"
+// Local json
+import Credentials = require("@constants/credentials.json")
+import Constants = require("@constants/config.json")
+// Local TS Files
+import Tango from "@modules/Tango"
 import { Client } from "discord.js"
 
 const client = new Client()
 const { user } = client
-const prefix = Constants.prefix
+const { prefix } = Constants
 
 client.on("ready", () => {
 	console.log(`Logged in as ${user}!`)

@@ -1,10 +1,13 @@
-import Heroes = require("../constants/heroes.json")
-import heroNames = require("../constants/heroNames.json")
-
-import { Message, User } from "discord.js"
-import IsHero from "../interfaces/IsHero"
+// Local json
+import Heroes = require("@constants/heroes.json")
+import HeroNames = require("@constants/heroNames.json")
+import Config = require("@constants/config.json")
+// Local TS Files
+import IsHero from "@interfaces/IsHero"
+import emptyHero from "@templates/HeroTemplate"
+// Node modules
 import Fuse from "fuse.js"
-import emptyHero from "../templates/HeroTemplate"
+import { Message, User } from "discord.js"
 
 class Tango {
 		msg: Message
@@ -28,10 +31,10 @@ class Tango {
 			const params = this.msgParams
 
 			const result = params.map(param => {
-				const fuse = new Fuse(heroNames, {
+				const fuse = new Fuse(HeroNames, {
 					includeScore: true,
 					shouldSort: true,
-					threshold: 0.7
+					threshold: Config.heroFuzzyThreshold
 				})
 				
 				return fuse.search(param).shift()
