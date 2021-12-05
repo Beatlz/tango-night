@@ -37,7 +37,7 @@ class Tango {
 			const fuse = new Fuse(HeroNames, {
 				includeScore: true,
 				shouldSort: true,
-				threshold: Config.heroFuzzyThreshold
+				threshold: Config.heroFuzzyThreshold,
 			})
 
 			const heroNameSearch = fuse.search(heroSearchParam).shift()
