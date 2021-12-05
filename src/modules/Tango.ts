@@ -29,22 +29,23 @@ class Tango {
 				return emptyHero
 
 			const params = this.msgParams
+			const heroSearchParam = params.find(param => !param.includes("dota.") && !param.includes("@") && !param.includes("="))
 
-			const result = params.map(param => {
-				const fuse = new Fuse(HeroNames, {
-					includeScore: true,
-					shouldSort: true,
-					threshold: Config.heroFuzzyThreshold
-				})
-				
-				return fuse.search(param).shift()
-			})
-
-			if (!result)
+			if (!heroSearchParam)
 				return emptyHero
 
-			const heroObject = result.sort((a: { score: number }, b: { score: number }) => a.score - b.score).shift()
-			const hero = Heroes[heroObject.refIndex]
+			const fuse = new Fuse(HeroNames, {
+				includeScore: true,
+				shouldSort: true,
+				threshold: Config.heroFuzzyThreshold
+			})
+
+			const heroNameSearch = fuse.search(heroSearchParam).shift()
+
+			if (!heroNameSearch)
+				return emptyHero
+
+			const hero = Heroes.find(hero => hero.localized_name === heroNameSearch.item) || emptyHero
 			
 			return hero
 		}
