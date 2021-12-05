@@ -1,3 +1,4 @@
+require("module-alias/register")
 // Local assets
 import Credentials from "@constants/credentials"
 import Constants from "@constants/config"

@@ -17,7 +17,8 @@
   "homepage": "https://github.com/Beatlz/tango-night#readme",
   "dependencies": {
     "discord.js": "^12.5.3",
-    "link-module-alias": "^1.2.0"
+    "link-module-alias": "^1.2.0",
+    "module-alias": "^2.2.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.30.0",
@@ -27,6 +28,18 @@
     "quick-score": "^0.0.12"
   },
   "_moduleAliases": {
-    "@": "dist"
+    "@": "/dist",
+    "@constants/*": [
+      "./dist/constants/*"
+    ],
+    "@interfaces/*": [
+      "./dist/interfaces/*"
+    ],
+    "@modules/*": [
+      "./dist/modules/*"
+    ],
+    "@templates/*": [
+      "./dist/templates/*"
+    ]
   }
 }

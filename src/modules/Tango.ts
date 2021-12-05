@@ -1,3 +1,4 @@
+require("module-alias/register")
 // Local assets
 import Heroes from "@constants/heroes"
 import HeroNames from "@constants/heroNames"
