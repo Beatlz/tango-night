@@ -1,6 +1,5 @@
 require("module-alias/register")
 // Local assets
-import Credentials from "@constants/credentials"
 import Constants from "@constants/config"
 import Tango from "@modules/Tango"
 // Node modules
@@ -30,4 +29,4 @@ client.on("message", msg => {
 	}
 })
 	
-client.login(Credentials.token)
+// client.login(Credentials.token)
