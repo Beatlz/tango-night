@@ -29,17 +29,9 @@
   },
   "_moduleAliases": {
     "@": "/dist",
-    "@constants/*": [
-      "./dist/constants/*"
-    ],
-    "@interfaces/*": [
-      "./dist/interfaces/*"
-    ],
-    "@modules/*": [
-      "./dist/modules/*"
-    ],
-    "@templates/*": [
-      "./dist/templates/*"
-    ]
+    "@constants": "./dist/constants",
+    "@interfaces": "./dist/interfaces",
+    "@modules": "./dist/modules",
+    "@templates": "./dist/templates"
   }
 }
