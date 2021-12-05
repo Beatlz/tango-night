@@ -1,0 +1,29 @@
+{
+  "name": "tango-night",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://beatlz: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@github.com/Beatlz/tango-night.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Beatlz/tango-night/issues"
+  },
+  "homepage": "https://github.com/Beatlz/tango-night#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
+    "fuse.js": "^6.4.6",
+    "quick-score": "^0.0.12"
+  }
+}

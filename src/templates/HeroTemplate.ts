@@ -1,0 +1,33 @@
+const heroTemplate = {
+	id: null,
+	name: "",
+	localized_name: "",
+	primary_attr: "",
+	attack_type: "",
+	roles: [""],
+	img: "",
+	icon: "",
+	base_health: null, 
+	base_health_regen: null, 
+	base_mana: null, 
+	base_mana_regen: null, 
+	base_armor: null, 
+	base_mr: null, 
+	base_attack_min: null, 
+	base_attack_max: null, 
+	base_str: null, 
+	base_agi: null, 
+	base_int: null, 
+	str_gain: null, 
+	agi_gain: null, 
+	int_gain: null, 
+	attack_range: null, 
+	projectile_speed: null, 
+	attack_rate: null, 
+	move_speed: null, 
+	turn_rate: null,
+	cm_enabled: false,
+	legs: null
+}
+
+export default heroTemplate
