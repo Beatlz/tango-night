@@ -1,8 +1,8 @@
-// Local json
+// Local assets
 import Credentials from "@constants/credentials"
 import Constants from "@constants/config"
-// Local TS Files
 import Tango from "@modules/Tango"
+// Node modules
 import { Client } from "discord.js"
 
 const client = new Client()
