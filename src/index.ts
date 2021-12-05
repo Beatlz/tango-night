@@ -1,6 +1,7 @@
 require("module-alias/register")
 // Local assets
 import Constants from "@constants/config"
+import Credentials from "@constants/credentials"
 import Tango from "@modules/Tango"
 // Node modules
 import { Client } from "discord.js"
@@ -29,4 +30,4 @@ client.on("message", msg => {
 	}
 })
 	
-// client.login(Credentials.token)
+client.login(Credentials.token)
