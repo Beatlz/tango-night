@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://beatlz: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@github.com/Beatlz/tango-night.git"
+    "type": "git"
   },
   "author": "",
   "license": "ISC",
