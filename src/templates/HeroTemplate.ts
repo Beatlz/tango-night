@@ -27,7 +27,7 @@ const heroTemplate = {
 	move_speed: null, 
 	turn_rate: null,
 	cm_enabled: false,
-	legs: null
+	legs: null,
 }
 
 export default heroTemplate
