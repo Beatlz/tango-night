@@ -1,16 +1,27 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 require("module-alias/register")
 // Local assets
-import Constants from "@constants/config"
+import Config from "@constants/config"
 import Credentials from "@constants/credentials"
 import Tango from "@modules/Tango"
 // Node modules
 import { Client } from "discord.js"
+// Commands
+import ping from "@commands/Ping"
+
+const commands = {
+	commandError(cmd: string) {
+		return `tango.${cmd} is not a command.`
+	},
+	ping,
+}
 
 const client = new Client()
-const { user } = client
-const { prefix } = Constants
+const { prefix } = Config
 
 client.on("ready", () => {
+	const { user } = client
+
 	console.log(`Logged in as ${user}!`)
 })
 
@@ -21,8 +32,12 @@ client.on("message", msg => {
 		return
 
 	const tango = new Tango(msg)
-	const command = tango.command
-
+	const { command } = tango
+	const commandList = Object.keys(commands)
+	// @ts-ignore
+	const cmd = commandList.find(command) ? tango.command : commands.commandError
+	// @ts-ignore
+	cmd()
 })
 	
 client.login(Credentials.token)
