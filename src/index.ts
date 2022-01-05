@@ -34,10 +34,9 @@ client.on("message", msg => {
 	const tango = new Tango(msg)
 	const { command } = tango
 	const commandList = Object.keys(commands)
+	const cmd = commandList.find(c => c === command) || commands.commandError
 	// @ts-ignore
-	const cmd = commandList.find(command) ? tango.command : commands.commandError
-	// @ts-ignore
-	cmd()
+	commands[cmd](tango)
 })
 	
 client.login(Credentials.token)
