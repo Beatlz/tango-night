@@ -7,12 +7,13 @@ import Tango from "@modules/Tango"
 // Node modules
 import { Client } from "discord.js"
 // Commands
-import ping from "@commands/Ping"
+import commandNotFound from "@commands/commandNotFound"
+import ping from "@commands/ping"
 
-const commands = {
-	commandError(cmd: string) {
-		return `tango.${cmd} is not a command.`
-	},
+type commandFn = (param: Tango) => string
+
+const commands: {[index: string]: commandFn} = {
+	commandNotFound,
 	ping,
 }
 
@@ -34,8 +35,8 @@ client.on("message", msg => {
 	const tango = new Tango(msg)
 	const { command } = tango
 	const commandList = Object.keys(commands)
-	const cmd = commandList.find(c => c === command) || commands.commandError
-	// @ts-ignore
+	const cmd: string = commandList.find(c => c === command) || "commandNotFound"
+	
 	commands[cmd](tango)
 })
 	
